@@ -1,0 +1,16 @@
+/* change progress bar thickness */
+#nprogress .bar {
+   height: 4px !important;
+}
+
+/* Increase size of text area of react quill rich text editor */
+.ql-editor {
+   min-height: 300px;
+}
+
+/* Full image width and keep orig resolution */
+.featured-image {
+   width: 100%;
+   max-height: 500px;
+   object-fit: cover;
+}

@@ -1,0 +1,64 @@
+.toolbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5rem;
+
+   &__search-wrapper {
+      position: relative;
+   }
+
+   input[type="search"] {
+      font-size: 2rem;
+      border: none;
+      border-bottom: 1px solid;
+      padding-bottom: 3px;
+      background-color: transparent;
+   }
+
+   ::placeholder {
+      color: $color-gray-dark-2;
+   }
+
+   :focus {
+      outline: none;
+   }
+
+   &__counter {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 5px);
+      font-size: 1rem;
+      color: $color-gray-dark-2;
+   }
+}
+
+.view-options {
+   display: flex;
+   align-items: center;
+   list-style: none;
+
+   button:not(:last-child) {
+      margin-right: 1.3rem;
+   }
+
+   &__grid {
+      padding: 2px;
+      border: 3px solid transparent;
+
+      :active {
+         border-color: $color-primary;
+         border-style: solid;
+      }
+   }
+
+   &__list {
+      padding: 2px;
+      border: 3px solid transparent;
+
+      :active {
+         border-color: $color-primary;
+         border-style: solid;
+      }
+   }
+}

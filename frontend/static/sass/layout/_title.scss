@@ -1,0 +1,88 @@
+.page-head {
+   height: 40vh;
+   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../../assets/adt-hbg.jpg);
+   background-size: cover;
+   background-position: top;
+   position: relative;
+
+   // @include respond(tab-land) {
+   //    height: 35vh;
+   // }
+
+   // @include respond(tab-port) {
+   //    height: 35vh;
+   // }
+
+   @include respond(big-desktop) {
+      height: 50vh;
+   }
+
+   /* logo element container */
+   &__logo-box {
+      position: absolute;
+      top: 4rem; /* reference is the parent - header */
+      left: 4rem; /* reference is the parent - header */
+   }
+
+   /* logo element */
+   &__logo {
+      height: 3.5rem;
+   }
+
+   /*  header text-box container */
+   &__text-box {
+      margin: 3rem 0;
+      position: absolute;
+      top: 40%; /* in relation to parent element */
+      left: 50%; /* in relation to parent element */
+      transform: translate(-50%, -50%); /* in relation to element itself*/
+      text-align: center;
+   }
+}
+
+.title {
+   border-top: 1px solid $color-white;
+   width: 100%;
+   padding-top: 1rem;
+   display: inline-block;
+   animation: moveInRight 1s ease-out;
+
+   @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+   }
+
+   &__navlist {
+      list-style: none;
+      font-family: "Lato", sans-serif;
+   }
+
+   &__item {
+      display: inline-block;
+      animation: moveInRight 1s ease-out;
+
+      &:not(:last-child) {
+         margin-right: 2rem;
+      }
+   }
+
+   &__link {
+      transition: all 0.1s;
+      &:link,
+      &:visited {
+         color: $color-white;
+         font-size: 1.8rem;
+         text-decoration: none;
+         display: inline-block;
+         transition: all 0.2s;
+      }
+
+      &:hover,
+      &:active {
+         color: $color-white;
+         background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
+         box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+         transform: scale(1.3);
+      }
+   }
+}

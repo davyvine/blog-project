@@ -1,0 +1,64 @@
+.catalog {
+   // background-color: $color-gray-light-1;
+
+   &__btn {
+      text-align: center;
+      position: absolute;
+      // margin-left: ;
+      margin: 10rem -1.5rem;
+      bottom: -5rem;
+      width: 100%;
+
+      @include respond(tab-land) {
+         bottom: -7rem;
+      }
+   }
+}
+
+.catalog-header {
+   height: 30vh;
+   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
+   // clip-path: polygon(0 0, 100% 0, 100% 20vh, 0 100%);
+   display: block;
+   padding: 6rem;
+}
+
+.catalog-view {
+   // grid-column: center-start / center-end;
+   margin: 5rem 8rem;
+
+   //grid container
+   display: grid;
+   grid-template-columns: repeat(3, minmax(45rem, 1fr));
+   grid-gap: 6rem;
+   margin-bottom: 10rem;
+
+   @include respond(tab-land) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(30rem, 1fr));
+      grid-gap: 6rem;
+      margin-bottom: 10rem;
+   }
+
+   @include respond(tab-port) {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(45rem, 1fr));
+      grid-gap: 6rem;
+      margin-bottom: 10rem;
+   }
+}
+
+.list {
+   // FUNCTIONALITY
+   // perspective: 150rem; //for the card rotation effect, lower value = more dramatic
+   // -moz-perspective: 150rem; // to make it work to firefox browser
+   position: relative;
+   overflow: hidden;
+   // border-bottom: 2px solid $color-black;
+   height: 50rem;
+   width: 50%;
+   margin: 3rem;
+   display: block;
+   justify-content: center;
+   transform: translateX(50%);
+}

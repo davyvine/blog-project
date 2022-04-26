@@ -1,0 +1,48 @@
+// A partial sass file
+
+/* simple reset - universal selector */
+*,
+*::after, /* select all after and before pseudo elements */
+*::before {
+   margin: 0; /* start clean without browser adding margin or padding in our element */
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html {
+   box-sizing: border-box;
+   //defines what 1rem is, 1rem = 10px; 10px/16px = 62.5%
+   font-size: 62.5%; /* technique to have a root reference for rems unit - 10px divide by 16px * 100% default browser value*/
+
+   @include respond(tab-land) {
+      // width < 1200?
+      font-size: 56.25%; //1 rem = 9px, 9/16px = 56.25%
+   }
+
+   @include respond(tab-port) {
+      //width < 900?
+      font-size: 50%; //1 rem = 8px, 8/16px = 50%
+   }
+
+   @include respond(big-desktop) {
+      font-size: 75%; //1rem = 12px, 12/16px = 75%
+   }
+}
+
+body {
+   box-sizing: border-box; /* borders and paddings not added to the total h and w of the box */
+   padding: 3rem;
+
+   @include respond(tab-port) {
+      padding: 0;
+   }
+}
+
+.container {
+   max-width: 100%;
+   display: grid;
+   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+   grid-template-columns:
+      [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end] minmax(6rem, 1fr) [full-end];
+}
